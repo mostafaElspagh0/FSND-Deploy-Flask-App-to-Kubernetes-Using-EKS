@@ -24,9 +24,6 @@ def client():
 
 def test_health(client):
     response = client.get('/')
-    # added to test the pipeline fails on test fail
-    #TODO:// remove unvalid test assertion
-    assert False
     assert response.status_code == 200
     assert response.json == 'Healthy'
 
